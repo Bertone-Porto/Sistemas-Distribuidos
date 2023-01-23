@@ -13,15 +13,15 @@ def readFile(args):
 
 def filtraAlbums(args):
     sp1 = args
-    sp = sp1[0].split("@")
+    sp = sp1[0].split("    ")
     if len(sp) == 2:
         aux = sp[1][:-1]
-        if (aux == "outlook.com"):
+        if (aux == "A"):
             ret = sp1[0][:-1]
         else:
             ret = ""
     else:
-        ret = ""
+        ret = "not found"
     return ret
 
 def printAlbums(args):
@@ -43,6 +43,9 @@ src.add_edge(nd, 0)
 nd.add_edge(ser, 0)
 t0 = time.time()
 sched.start()
+t1 = time.time()
+
+print "Execution time %.3f" %(t1-t0)
 t1 = time.time()
 
 print "Execution time %.3f" %(t1-t0)
